@@ -1,7 +1,20 @@
-def readFirstLine(p):
+def readFirstLine(p, replaceEOL = False):
     l = None
-    with open(p, encoding="utf-8") as f:
+    with open(p, "r", encoding="utf-8") as f:
         l = f.readline()
+    
+    if (replaceEOL):
+        l = l.replace("\n", "")
+    return l
+
+def readSecondLine(p, replaceEOL = False):
+    l = None
+    with open(p, "r", encoding="utf-8") as f:
+        next(f)
+        l = f.readline()
+        
+    if (replaceEOL):
+        l = l.replace("\n", "")
     return l
 
 """

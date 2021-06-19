@@ -12,10 +12,18 @@ def processInput(l):
     return op, data, args
 
 def getOP(l):
-    return l.split(DELIMITER)[0]
+    # return l.split(DELIMITER)[0]
+    return l.split(" ")[0]
 
 def isValidOP(op):
     return op in VALID_OP
 
 def isValidInputData(SCHEMA_LEN, args):
     return len(args) == SCHEMA_LEN
+
+def isInt(s):
+    try:
+        temp = int(s)
+        return True
+    except ValueError:
+        return False

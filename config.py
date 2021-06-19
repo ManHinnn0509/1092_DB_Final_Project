@@ -1,4 +1,4 @@
-VALID_OP = ["SELECT", "INSERT"]
+VALID_OP = ["SELECT", "INSERT", "EXPORT"]
 
-DELIMITER = " "
+DELIMITER = ","
 DB_FILE_NAME = "db.txt"

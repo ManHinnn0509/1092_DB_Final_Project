@@ -8,7 +8,7 @@ content = f.read()
 f.close()
 
 DELIMITER_FROM = ","
-DELIMITER_TO = " "
+DELIMITER_TO = ","
 
 content = content.replace(DELIMITER_FROM, DELIMITER_TO)
 

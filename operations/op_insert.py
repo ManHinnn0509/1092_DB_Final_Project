@@ -1,9 +1,10 @@
 from util.utils import isValidInputData, processInput, log
 
-from config import DB_FILE_NAME
+from config import DB_FILE_NAME, DELIMITER
 
 def insert(SCHEMA_LEN, l):
     op, data, args = processInput(l)
+    data = DELIMITER.join(args)
 
     if not (isValidInputData(SCHEMA_LEN, args)):
         log("Invalid input data!")
@@ -38,3 +39,8 @@ def __addRow(data):
         return True
     except:
         return False
+
+"""
+    There should be another function for this operation...
+    Which is detect datatype for the input..
+"""
