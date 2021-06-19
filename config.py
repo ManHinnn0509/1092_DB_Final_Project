@@ -1,0 +1,4 @@
+VALID_OP = ["SELECT", "INSERT"]
+
+DELIMITER = " "
+DB_FILE_NAME = "db.txt"
