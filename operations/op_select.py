@@ -12,11 +12,29 @@ def select(l):
     else:
         __showSelect(l)
 
+def __simpleSelect(l):
+    l = l.split(" ")
+
+    key = l[-1]
+    if (key == "*"):
+        key = ""
+
+    with open(DB_FILE_NAME, "r", encoding="utf-8") as f:
+        next(f)
+        for line in f:
+            if (line == "\n"):
+                continue
+            if (line.startswith(key)):
+                line = processLine(line)
+                print(f"\t{line}")
+
 def __showSelect(l):
     l = l.split(" " + SHOW_KEYWORD + " ")
 
     key = l[0].split(" ")[-1]
     # print(key)
+    if (key == "*"):
+        key = ""
 
     show = l[-1].split(" ")
     # print(show)
@@ -32,6 +50,7 @@ def __showSelect(l):
         indexList.append(i)
     
     with open(DB_FILE_NAME, "r", encoding="utf-8") as f:
+        next(f)
         for line in f:
             if (line == "\n"):
                 continue
@@ -47,20 +66,6 @@ def __formatLine(line, indexList):
     for i in indexList:
         l += line[i] + " "
     return l
-
-
-def __simpleSelect(l):
-    l = l.split(" ")
-
-    key = l[-1]
-
-    with open(DB_FILE_NAME, "r", encoding="utf-8") as f:
-        for line in f:
-            if (line == "\n"):
-                continue
-            if (line.startswith(key)):
-                line = processLine(line)
-                print(f"\t{line}")
 
 def __getIndex(key):
     return KEY_INDEX_DICT.get(key, -1)
