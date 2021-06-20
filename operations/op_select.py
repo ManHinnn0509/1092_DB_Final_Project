@@ -1,12 +1,19 @@
+from util.file_utils import isEmptyFile
 from util.utils import log, processLine
 from config import DB_FILE_NAME, DELIMITER
 from schema import KEY_INDEX_DICT
 
 SHOW_KEYWORD = "SHOW"
 
-# SELECT ? SHOW KEY KEY KEY KEY KEY
+# Format examples:
+# SELECT 企管一甲 SHOW 開課班級 課程名稱 選課代號
+# SELECT * SHOW 開課班級 課程名稱 選課代號
 
 def select(l):
+    if (isEmptyFile(DB_FILE_NAME)):
+        log("Database is empty!")
+        return
+    
     if (SHOW_KEYWORD not in l):
         __simpleSelect(l)
     else:

@@ -1,3 +1,4 @@
+from operations.op_delete import delete
 import os
 
 from util.utils import log, processInput, isValidOP, getOP
@@ -21,21 +22,19 @@ def main():
         if (l == ""):
             continue
 
-        op = getOP(l)
-        op = op.upper()
+        op = getOP(l).upper()
         if (op == "EXIT"):
             break
-
-        if not (isValidOP(op)):
-            log("[{}] is an invalid OP!".format(op))
-            continue
-        
-        if (op == "EXPORT"):
+        elif (op == "EXPORT"):
             export(l)
         elif (op == "INSERT"):
             insert(SCHEMA_LEN, l)
         elif (op == "SELECT"):
             select(l)
+        elif (op == "DELETE"):
+            delete(l)
+        else:
+            log("[{}] is an invalid OP!".format(op))
 
 if (__name__ == "__main__"):
     os.system("cls")

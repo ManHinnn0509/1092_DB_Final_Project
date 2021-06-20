@@ -1,3 +1,15 @@
+import os
+
+def isEmptyFile(p):
+    return (os.stat(p).st_size == 0)
+
+def eraseFileContent(p):
+    try:
+        open(p, "w+", encoding="utf-8").close()
+        return True
+    except:
+        return False
+
 def readFirstLine(p, replaceEOL = False):
     l = None
     with open(p, "r", encoding="utf-8") as f:
