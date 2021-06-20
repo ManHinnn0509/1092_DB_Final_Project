@@ -1,4 +1,4 @@
-from config import VALID_OP, DELIMITER
+from config import OUTPUT_DELIMITER, VALID_OP, DELIMITER
 
 def log(s):
     # print(">> {}".format(s))
@@ -10,6 +10,10 @@ def processInput(l):
     data = " ".join(args)
 
     return op, data, args
+
+def processLine(line):
+    line = line.replace("\n", "").replace(DELIMITER, OUTPUT_DELIMITER)
+    return line
 
 def getOP(l):
     # return l.split(DELIMITER)[0]

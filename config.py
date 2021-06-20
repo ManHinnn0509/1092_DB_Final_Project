@@ -1,4 +1,6 @@
 VALID_OP = ["SELECT", "INSERT", "EXPORT"]
 
 DELIMITER = ","
+OUTPUT_DELIMITER = " "
+
 DB_FILE_NAME = "db.txt"
