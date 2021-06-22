@@ -3,6 +3,7 @@ import os
 
 from util.utils import log, processInput, isValidOP, getOP
 from util.file_utils import readFirstLine
+
 from config import DB_FILE_NAME, DELIMITER
 
 from operations.op_export import export
@@ -14,11 +15,9 @@ from operations.op_select import select
         開課班級 課程名稱 選課代號 學分數 必選修 開課單位 開課人數 已收授人數 授課教師
 """
 
-SCHEMA_LEN = 9
-
 def main():
     while (True):
-        l = input()
+        l = input(">> ")
         if (l == ""):
             continue
 
@@ -28,7 +27,7 @@ def main():
         elif (op == "EXPORT"):
             export(l)
         elif (op == "INSERT"):
-            insert(SCHEMA_LEN, l)
+            insert(l)
         elif (op == "SELECT"):
             select(l)
         elif (op == "DELETE"):

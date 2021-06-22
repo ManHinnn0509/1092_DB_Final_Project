@@ -9,3 +9,5 @@ KEY_INDEX_DICT = {
     "已收授人數": 7,
     "授課教師": 8
 }
+
+SCHEMA_LEN = len(KEY_INDEX_DICT)

@@ -1,8 +1,8 @@
 from util.utils import isValidInputData, processInput, log
-
 from config import DB_FILE_NAME, DELIMITER
+from schema import SCHEMA_LEN
 
-def insert(SCHEMA_LEN, l):
+def insert(l):
     op, data, args = processInput(l)
     data = DELIMITER.join(args)
 

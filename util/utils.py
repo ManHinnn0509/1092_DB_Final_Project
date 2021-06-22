@@ -22,8 +22,8 @@ def getOP(l):
 def isValidOP(op):
     return op in VALID_OP
 
-def isValidInputData(SCHEMA_LEN, args):
-    return len(args) == SCHEMA_LEN
+def isValidInputData(schemaLen, args):
+    return len(args) == schemaLen
 
 def isInt(s):
     try:
