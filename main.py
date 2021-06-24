@@ -1,14 +1,9 @@
-from operations.op_delete import delete
 import os
 
-from util.utils import log, processInput, isValidOP, getOP
-from util.file_utils import readFirstLine
-
+from util.utils import log, getOP
 from config import DB_FILE_NAME, DELIMITER
 
-from operations.op_export import export
-from operations.op_insert import insert
-from operations.op_select import select
+from operations import *
 
 """
     Header:

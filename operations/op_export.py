@@ -82,6 +82,8 @@ def __outputSQL(outputName):
                     continue
                 l = l.replace("\n", "")
                 l = l.split(DELIMITER)
+
+                # Not sure if INSERT 1 by 1 is a good idea or not
                 temp = "INSERT INTO {} VALUES {};".format(OUTPUT_TABLE_NAME, str(tuple(l))) + "\n"
                 s += temp
         
