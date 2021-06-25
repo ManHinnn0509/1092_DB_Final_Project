@@ -1,5 +1,4 @@
 import csv
-import pandas
 
 from util.file_utils import readFirstLine, readSecondLine
 from util.utils import isInt, log

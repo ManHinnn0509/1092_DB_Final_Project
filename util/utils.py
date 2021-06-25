@@ -1,4 +1,5 @@
 from config import OUTPUT_DELIMITER, VALID_OP, DELIMITER
+from schema import KEY_INDEX_DICT
 
 def log(s):
     # print(">> {}".format(s))
@@ -31,3 +32,6 @@ def isInt(s):
         return True
     except ValueError:
         return False
+
+def genHeaderLine():
+    return DELIMITER.join(KEY_INDEX_DICT.keys())
